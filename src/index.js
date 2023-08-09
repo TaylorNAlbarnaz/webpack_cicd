@@ -1,1 +1,1 @@
-console.log('funfa')
+import './css/style.css';
