@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("function component() {\r\n     const element = document.createElement('div');\r\n\r\n     element.innerHTML = \"Hello World\"\r\n\r\n     return element;\r\n}\r\n\r\ndocument.body.appendChild(component());\n\n//# sourceURL=webpack://webpack_cicd/./src/index.js?");
+eval("console.log('funfa')\n\n//# sourceURL=webpack://webpack_cicd/./src/index.js?");
 
 /***/ })
 
