@@ -1,0 +1,28 @@
+name: Deploy
+on: 
+     push:
+       branches:
+          - main
+jobs:
+     build-and-deploy:
+          runs-on: ubuntu-latest
+          concurrency: ci-${{github.ref}}
+          steps:
+               - name: Copiando arquivos do projeto
+                 uses: action/checkout@v3
+
+               - name: Configurando o Node
+                 uses: action/setup-node@v3
+                 with:
+                    node-version: 18
+
+               - name: Instalando dependências e montando aplicação
+                 run: |
+                    npm ci
+                    npm run build
+
+               - name: Fazendo upload para Github Pages
+                 uses: JamesIves/github-pages-deploy-action@v4
+                 with:
+                    folder: dist
+                    branch: gh-pages
