@@ -9,10 +9,10 @@ jobs:
           concurrency: ci-${{github.ref}}
           steps:
                - name: Copiando arquivos do projeto
-                 uses: action/checkout@v3
+                 uses: actions/checkout@v3
 
                - name: Configurando o Node
-                 uses: action/setup-node@v3
+                 uses: actions/setup-node@v3
                  with:
                     node-version: 18
 
